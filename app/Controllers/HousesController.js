@@ -1,21 +1,38 @@
 import { ProxyState } from "../AppState.js";
+import { getHouseForm } from "../Components/HouseForm.js";
+// import { getHouseForm } from "../Components/HouseForm.js";
 
 
-function _drawHouses(){
-  // get all the houses and build a template
-  
-
-  document.getElementById('listings').innerHTML = ' The Houses go here'
-}
 
 
-export class HousesController{
- constructor(){
-   console.log('Houses controller loaded', ProxyState.houses);
- }
+export class HousesController {
+  constructor() {
+    // ProxyState.on('houses', _drawHouses)
+  }
 
- viewHouses(){
-  //  Get Car Form and inject into modal body
-  _drawHouses()
- }
+  _drawHouses() {
+    // get all the houses and build a template
+    let houses = ProxyState.houses
+    let template = ''
+    houses.forEach(h => {
+      template += h.Template
+    })
+
+    document.getElementById('listings').innerHTML = template
+  }
+
+
+  viewHouses() {
+    let form = getHouseForm()
+    console.log(form);
+    document.getElementById('house-body').innerHTML = form
+    _drawHouses()
+  }
+
+  // createHouse() {
+  //   window.event.preventDefault()
+  //   let form = window.event.target
+  //   console.log('house submitted', form);
+  // }
+
 }

@@ -23,7 +23,7 @@
         <span class="ms-2">gregslist</span>
       </a>
       <b onclick="app.carsController.viewCars()">Cars</b>
-      <b onclick="app.housesController.viewHouses()">Houses</b>
+      <b onclick="app.housesController._drawHouses()">Houses</b>
       <b>Jobs</b>
     </nav>
   </header>
@@ -46,6 +46,7 @@
         Create
       </button>
 
+
       <!-- Modal -->
       <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
@@ -63,9 +64,23 @@
         </div>
       </div>
 
+      <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="house-body">
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     </div>
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">

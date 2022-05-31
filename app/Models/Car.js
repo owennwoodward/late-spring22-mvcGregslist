@@ -1,8 +1,8 @@
 import { generateId } from "../Utils/generateId.js"
 
 
-export class Car{
-  constructor(carData){
+export class Car {
+  constructor(carData) {
     // NOTE need id to have something unique on each car
     this.id = generateId()
     this.make = carData.make
@@ -15,10 +15,10 @@ export class Car{
   }
 
 
-  get Template(){
+  get Template() {
     return `
   <div class=" col-6 col-md-3">
-    <div class="rounded shadow p-2" ">
+    <div class="rounded shadow p-2">
       <img class="img-fluid" src="${this.imgUrl}" alt="">
       <h5 class="text-center">${this.make} | ${this.model} | ${this.year}</h5>
       <h4 class="text-center">$${this.price}</h4>

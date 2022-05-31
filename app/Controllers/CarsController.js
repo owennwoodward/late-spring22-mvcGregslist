@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js";
 import { getCarForm } from "../Components/CarForm.js";
 import { carsService } from "../Services/CarsService.js";
 
-function _drawCars(){
+function _drawCars() {
   let cars = ProxyState.cars
   let template = ''
   cars.forEach(c => {
@@ -12,15 +12,15 @@ function _drawCars(){
   document.getElementById('listings').innerHTML = template
 }
 
-export class CarsController{
-  constructor(){
-    console.log('cars controller loaded', ProxyState.cars);
+export class CarsController {
+  constructor() {
+    // console.log('cars controller loaded', ProxyState.cars);
     ProxyState.on('cars', _drawCars)
     this.viewCars()
   }
 
   // NOTE view cars handles drawing the cars and injecting the new car form
-  viewCars(){
+  viewCars() {
     let form = getCarForm()
     // console.log(form);
     document.getElementById('form-body').innerHTML = form
@@ -28,7 +28,7 @@ export class CarsController{
   }
 
 
-  createCar(){
+  createCar() {
     // NOTE prevent default keeps the form submit event from reloading the page
     window.event.preventDefault()
     let form = window.event.target
@@ -36,15 +36,15 @@ export class CarsController{
     // NOTE controller will collect all the information from the form...
     // NOTE the red underlines between form and value are ok
     let carData = {
-      make : form.make.value,
-      model : form.model.value,
+      make: form.make.value,
+      model: form.model.value,
       year: form.year.value,
       price: form.price.value,
       description: form.description.value,
       imgUrl: form.imgUrl.value,
-      color : form.color.value
+      color: form.color.value
     }
-    console.log('the new car',carData);
+    console.log('the new car', carData);
     // ... and pass it to the service
     carsService.createCar(carData)
     form.reset()
@@ -53,7 +53,7 @@ export class CarsController{
     bootstrap.Modal.getOrCreateInstance(document.getElementById('form-modal')).hide()
   }
 
-  deleteCar(id){
+  deleteCar(id) {
     console.log('deleting car', id);
     carsService.deleteCar(id)
   }
