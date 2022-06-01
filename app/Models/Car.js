@@ -25,6 +25,7 @@ export class Car {
       <p>${this.description}</p>
       <input class="w-100" type="color" value="${this.color}">
       <button class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')"><i class="mdi mdi-delete"></i></button>
+      <button class="btn btn-success" onclick="app.carsController.openEditForm('${this.id}')"><i class="mdi mdi-alien"></i></button>
     </div>
   </div>
     `

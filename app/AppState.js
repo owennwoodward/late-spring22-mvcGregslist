@@ -7,10 +7,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
   /** @type {import('./Models/Car').Car[]} */
-  cars = [
-    new Car({ make: 'Chevrolet', model: 'Impala', description: 'It balla', price: 10, year: 1964, color: '#000000', imgUrl: 'https://m.media-amazon.com/images/I/51IpgyJ3GmL._AC_SX466_.jpg' }),
-    new Car({ make: 'Buick', model: 'Grand National', description: 'It is grand', price: 15, year: 1984, color: '#ff0000', imgUrl: 'http://www.deansgarage.com/wp-content/uploads/GNpropsals.jpg' })
-  ]
+  cars = []
 
   houses = [
     new House({ color: 'White', year: 1999, bedrooms: 3, bathrooms: 3, footage: 2500, price: 200000, description: 'Ugly and Stinky', imgUrl: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/dcf8df73-db1e-408d-8e20-3da3731a35ca-2000s-exterior-Redfin.jpg' }),
